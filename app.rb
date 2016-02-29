@@ -19,11 +19,11 @@ enable :sessions
     @player_2_name = $player_2.name
     erb :play
   end
-  
+
   get '/attack' do
     @player_1 = $player_1
     @player_2 = $player_2
-    @player_1.attack(@player_2)
+    Game.new.attack(@player_2)
     erb :attack
   end
 
